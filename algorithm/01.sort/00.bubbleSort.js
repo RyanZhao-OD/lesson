@@ -28,5 +28,24 @@ const bubbleSort2 = arr => {
     return arr;
 }
 
+
+const bubbleSort3 = arr => {
+    let swapped = false;
+    for (let i = arr.length - 1; i > 0; i--) {
+        swapped = false;
+        for (let j = 0; j < i; j++) {
+            if (arr[j] > arr[j + 1]) {
+                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+                swapped = true;
+            }
+        }
+        if (!swapped) {
+            return arr;
+        }
+    }
+    return arr;
+};
+
 console.log(bubbleSort([4, 9, 7, -4, 10]));
-console.log(bubbleSort2([4, 9, 7, -4, 10]));
+console.log(bubbleSort2([1,2,3,5,4]));
+console.log(bubbleSort3([1,2,3,5,4]));
