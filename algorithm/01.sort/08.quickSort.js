@@ -1,25 +1,28 @@
-// http://math.hws.edu/eck/jsdemo/sortlab.html 排序演示
+const _getPivotIndex = (arr, start, end) => {
+	const pivot = arr[start];
+	while (start < end) {
+		while(start < end && pivot <= arr[end]) {
+			end--;
+		}
+		arr[start] = arr[end];
+		while (start < end && pivot >= arr[start]) {
+			start++;
+		}
+		arr[end] = arr[start];
+	}
+	arr[start] = pivot;
+	return start;
+};
 
-/**
- * 平均情况O(nlog2n) 最好情况O(nlog2n) 最坏情况O(n^2) 不稳定
- * @param arr
- * @returns {*}
- */
-const quickSort = (function func(arr){
-    if(arr.length <= 1) {
-        return arr;
-    }
-    let pivot = arr[0];
-    let leftArr = [];
-    let rightArr = [];
-    for(let i = 1, length = arr.length; i < length; i++){
-        if(arr[i] > pivot){
-            rightArr.push(arr[i]);
-        } else {
-            leftArr.push(arr[i]);
-        }
-    }
-    return [].concat(func(leftArr), [pivot], func(rightArr));
-});
+const _quickSort = (arr, start, end) => {
+	if (start < end) {
+		let pivotIndex = _getPivotIndex(arr, start, end);
+		_quickSort(arr, start, pivotIndex - 1);
+		_quickSort(arr, pivotIndex + 1, end);
+	}
+	return arr;
+};
+
+const quickSort = arr => _quickSort(arr, 0, arr.length - 1);
 
 console.log(quickSort([4, 9, 7, -4, 10]));

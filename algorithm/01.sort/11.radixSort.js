@@ -1,5 +1,8 @@
 //LSD Radix Sort
-var counter = [];function radixSort(arr, maxDigit) {
+var counter = [];
+// https://segmentfault.com/a/1190000003054515?_ea=289827
+// 从数值每一位进行比较 个位、十位、百位...
+const radixSort = (arr, maxDigit) => {
    var mod = 10;
    var dev = 1;
    for (var i = 0; i < maxDigit; i++, dev *= 10, mod *= 10) {
@@ -22,3 +25,5 @@ var counter = [];function radixSort(arr, maxDigit) {
    }
    return arr;
 }
+
+console.log(radixSort([505, 8, 109, 930, 63, 269, 278, 83, 184, 589]));

@@ -9,12 +9,11 @@
 // [2, 2, 3, 4, 7, 9]
 
 
-const countingSort = (arr, maxValue) => {
-    const maxValue = arr.reduce((prev, cur) => {
-        return Math.max(prev, cur);
-    });
-    let bucket = new Array(maxValue + 1);
+const countingSort = arr => {
+    const maxValue = Math.max(...arr);
+    const bucket = new Array(maxValue + 1);
     let sortedIndex = 0;
+    
     for (let i = 0; i < bucket.length; i++) {
         bucket[i] = 0;
     }
@@ -22,7 +21,7 @@ const countingSort = (arr, maxValue) => {
         bucket[arr[i]]++;
     }
 
-    for (let j = 0; i < bucket.length; i++) {
+    for (let i = 0; i < bucket.length; i++) {
         while(bucket[i] > 0) {
             arr[sortedIndex] = i;
             sortedIndex++;
@@ -35,4 +34,4 @@ const countingSort = (arr, maxValue) => {
 
 
 
-console.log(countingSort([9, 3, 7, 2, 2, 4], 9));
+console.log(countingSort([9, 3, 7, 2, 2, 4]));

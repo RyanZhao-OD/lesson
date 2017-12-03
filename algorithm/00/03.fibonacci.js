@@ -1,3 +1,8 @@
+/**
+ *         n                       (n <= 2)
+ * f(n) =  f(n - 1) + f(n - 2)     (n > 2)
+ *
+ */
 const fibonacci = function _fibonacci(n) {
     if (n <= 2) {
         return n;
@@ -5,9 +10,7 @@ const fibonacci = function _fibonacci(n) {
     return _fibonacci(n - 1) + _fibonacci(n - 2);
 };
 
-console.log(fibonacci(3));
-
-const fibonacci2 = (() => {
+const fibonacci1 = (() => {
     const cache = [0, 1, 2];
     return function _fibonacci(n) {
         if (!!cache[n]) {
@@ -18,4 +21,5 @@ const fibonacci2 = (() => {
     };
 })();
 
-console.log(fibonacci2(3));
+console.log(fibonacci(5));
+console.log(fibonacci1(5));
