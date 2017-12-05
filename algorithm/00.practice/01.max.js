@@ -6,7 +6,7 @@ const max1 = arr => arr.reduce((prev, cur) => Math.max(prev, cur));
 
 const max2 = arr => {
     let tempMax = arr[0];
-    for (let i = 1, length = arr.length; i < length; i++ ) {
+    for (let i = 1, length = arr.length; i < length; i++) {
         (arr[i] > tempMax) && (tempMax = arr[i]);
     }
     return tempMax;
