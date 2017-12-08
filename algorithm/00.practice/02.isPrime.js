@@ -38,10 +38,10 @@ const isPrime2 = num => {
         return num > 1;
     }
     // 不在6的倍数的旁边 一定不是质数
-    const temp = num % 6;
-    if (temp !== 1 && temp !== 5) {
+    if ((num + 1) % 6 !== 0 && (num - 1) % 6 !== 0) {
         return false;
     }
+
     // 在6的倍数的旁边 也不一定是质数 25
     for (let i = 5, end = Math.sqrt(num); i <= end; i += 6) {
         if (num % i === 0 || num % (i + 2) === 0) {
@@ -52,5 +52,6 @@ const isPrime2 = num => {
     return true;
 };
 
-console.log('----');
-console.log(isPrime2(5));
+for (let i = 0; i < 1000; i++) {
+    isPrime2(i)
+}

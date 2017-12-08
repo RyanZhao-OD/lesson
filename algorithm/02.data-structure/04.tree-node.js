@@ -1,10 +1,36 @@
 class TreeNode {
-    constructor(val, left, right) {
+    constructor(val, left = null, right = null) {
         this.val = val;
-        this.left = null;
-        this.right = null;
+        this.left = left;
+        this.right = right;
+    }
+
+    reverseMirror(node = this) {
+        if (node) {
+            [node.left, node.right] = [node.right, node.left];
+            if (node.left) {
+                this.reverseMirror(node.left);
+            }
+            if (node.right) {
+                this.reverseMirror(node.right);
+            }
+        }
     }
 }
+/**
+ *            1
+ *          2    3
+ *      4      5
+ **/
+let root = new TreeNode(1);
+root.left = new TreeNode(2);
+root.right = new TreeNode(3);
+root.left.left = new TreeNode(4);
+root.right.left = new TreeNode(5);
+console.log(root);
+
+root.reverseMirror();
+console.log(root);
 
 // 二叉搜索树
 class BinarySearchTree {
@@ -23,7 +49,7 @@ class BinarySearchTree {
 	}
 
     insert(val) {
-		const node = new TreeNode(val, null, null);
+		const node = new TreeNode(val);
 		if (this.root == null) {
 			this.root = node;
 		} else {
@@ -91,6 +117,7 @@ class BinarySearchTree {
  *             16   45
  *           3 22  37 99
  */
+ /*
 const tree = new BinarySearchTree();
 tree.insert(23);
 tree.insert(45);
@@ -109,3 +136,5 @@ console.log('------');
 tree.postOrder();
 console.log('------');
 tree.dfsOrder();
+
+*/

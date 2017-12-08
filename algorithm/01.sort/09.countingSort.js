@@ -8,12 +8,12 @@
 // [0, 0, 2, 1, 1, 0, 0, 1, 0, 1]
 // [2, 2, 3, 4, 7, 9]
 
-
+// 特定范围的数 >0
 const countingSort = arr => {
     const maxValue = Math.max(...arr);
     const bucket = new Array(maxValue + 1);
     let sortedIndex = 0;
-    
+
     for (let i = 0; i < bucket.length; i++) {
         bucket[i] = 0;
     }

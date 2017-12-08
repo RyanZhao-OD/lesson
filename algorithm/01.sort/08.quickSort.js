@@ -1,7 +1,7 @@
 const _getPivotIndex = (arr, start, end) => {
 	const pivot = arr[start];
 	while (start < end) {
-		while(start < end && pivot <= arr[end]) {
+		while (start < end && pivot <= arr[end]) {
 			end--;
 		}
 		arr[start] = arr[end];

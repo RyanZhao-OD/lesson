@@ -18,9 +18,9 @@ const bubbleSort = arr => {
 
 // 小的往前冒
 const bubbleSort2 = arr => {
-    for(let i = 0, length = arr.length; i < length - 1; i++) {
-        for(let j = i + 1; j < length; j++) {
-            if(arr[i] > arr[j]) {
+    for (let i = 0, length = arr.length; i < length - 1; i++) {
+        for (let j = i + 1; j < length; j++) {
+            if (arr[i] > arr[j]) {
                 [arr[i], arr[j]] = [arr[j], arr[i]];
             }
         }
@@ -47,5 +47,5 @@ const bubbleSort3 = arr => {
 };
 
 console.log(bubbleSort([4, 9, 7, -4, 10]));
-console.log(bubbleSort2([1,2,3,5,4]));
-console.log(bubbleSort3([1,2,3,5,4]));
+console.log(bubbleSort2([4, 9, 7, -4, 10]));
+console.log(bubbleSort3([4, 9, 7, -4, 10]));

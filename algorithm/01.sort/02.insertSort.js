@@ -9,7 +9,7 @@ const insertSort = arr => {
 		}
 	}
 	return arr;
-}
+};
 
 // 插入排序(折半插入)
 const insertSort2 = arr => {
@@ -25,10 +25,6 @@ const insertSort2 = arr => {
 		const curInsertItem = arr[i];
 		while (low <= high) {
 			middle = Math.floor((low + high) / 2);
-			console.log('---');
-			console.log(low);
-			console.log(high);
-			console.log(middle);
 			// arr[i]就是当前循环待排序的元素
 			if (arr[middle] > curInsertItem) {
 				high = middle - 1;

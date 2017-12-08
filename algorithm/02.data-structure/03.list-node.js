@@ -1,7 +1,7 @@
 class ListNode {
-    constructor(val, next) {
+    constructor(val, next = null) {
         this.val = val;
-        this.next = null;
+        this.next = next;
     }
 
     printList() {
@@ -10,10 +10,6 @@ class ListNode {
             console.log(cur);
             cur = cur.next;
         }
-    }
-
-    reverse() {
-
     }
 }
 
@@ -30,11 +26,19 @@ node4.next = node5;
 
 node2.printList();
 console.log('----');
+/**
+ *
+ *        2 -> 4 -> 1 -> 5 -> 8 -> 6
+ *  next
+ *
+ *
+ */
 const reverseList = head => {
     let newHead = null;
+    let next = null;
     // 只要不是空
     while (head) {
-        let next = head.next;
+        next = head.next;
         head.next = newHead;
         newHead = head;
         head = next;
