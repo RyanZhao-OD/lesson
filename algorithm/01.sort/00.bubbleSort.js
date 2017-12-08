@@ -16,21 +16,8 @@ const bubbleSort = arr => {
     return arr;
 };
 
-// 小的往前冒
 const bubbleSort2 = arr => {
-    for (let i = 0, length = arr.length; i < length - 1; i++) {
-        for (let j = i + 1; j < length; j++) {
-            if (arr[i] > arr[j]) {
-                [arr[i], arr[j]] = [arr[j], arr[i]];
-            }
-        }
-    }
-    return arr;
-}
-
-
-const bubbleSort3 = arr => {
-    let swapped = false;
+    let swapped;
     for (let i = arr.length - 1; i > 0; i--) {
         swapped = false;
         for (let j = 0; j < i; j++) {

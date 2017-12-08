@@ -22,9 +22,8 @@ const _merge = (left, right) => {
    }
 
    return result;
-}
+};
 
-//采用自上而下的递归方法
 const mergeSort = arr => {
    const len = arr.length;
    if (len < 2) {
@@ -36,4 +35,4 @@ const mergeSort = arr => {
    return _merge(mergeSort(left), mergeSort(right));
 };
 
-console.log(mergeSort([4,3,2,1]));
+console.log(mergeSort([4, 3, 7, 2, 1]));

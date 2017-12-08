@@ -5,7 +5,6 @@
  * 2.排序前n个 遍历剩下的 如果比第n个小 就忽略 否则 插入 并挤出一个元素
  * 3.快速的思想(缺点：需要多次操作不需要用到的元素，如果数组很大，需要排序很多)
  * 4.构建一个最小堆,大小为n 遍历这个数组(O(N))，如果比堆顶部小，重新维护堆结构(O(logn)),辅助存储空间为n(辅助存储空间n)
- * 5.如果数组不大，遍历这个数组，把每个数当做一个对象的key，每次有相同的Key就+1，最后找第n个
  */
 
 const _getPivotIndex = (arr, low, high) => {
@@ -34,7 +33,7 @@ const _quickSortKMax = (arr, low, high, kIndex) => {
         if(mid > kIndex) {
             //左递归
             return _quickSortKMax(arr, low, mid - 1, kIndex);
-        } else if(mid < kIndex) {
+        } else if (mid < kIndex) {
             //右递归
             return _quickSortKMax(arr, mid + 1, high, kIndex);
         } else {

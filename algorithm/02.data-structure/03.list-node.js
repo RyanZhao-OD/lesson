@@ -46,5 +46,22 @@ const reverseList = head => {
     return newHead;
 };
 
+const hasCycle = head => {
+    let fast = head;
+    let slow = head;
+    while (fast) {
+        slow = slow.next;
+        fast = fast.next;
+        if (!fast) {
+            return false;
+        }
+        fast = fast.next;
+        if (fast === slow) {
+            return true;
+        }
+    }
+    return false;
+};
+
 const reverseNode = reverseList(node2);
 reverseNode.printList();

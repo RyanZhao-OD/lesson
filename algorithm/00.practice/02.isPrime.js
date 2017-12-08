@@ -42,16 +42,12 @@ const isPrime2 = num => {
         return false;
     }
 
-    // 在6的倍数的旁边 也不一定是质数 25
-    for (let i = 5, end = Math.sqrt(num); i <= end; i += 6) {
-        if (num % i === 0 || num % (i + 2) === 0) {
+    // 一个数若可以进行因数分解，那么分解时得到的两个数一定是一个小于等于sqrt(n)，一个大于等于sqrt(n)
+    for (let i = 2, temp = Math.sqrt(num); i <= temp; i++) {
+        if (num % i === 0) {
             return false;
         }
     }
     // 其他情况 都是质数
     return true;
 };
-
-for (let i = 0; i < 1000; i++) {
-    isPrime2(i)
-}

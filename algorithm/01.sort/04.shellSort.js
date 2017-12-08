@@ -1,19 +1,25 @@
-const shellSort = arr => {
-   let len = arr.length;
-   let temp;
-   let gap = 1;
+const shellSort = a => {
 
-   while(gap < len / 3) {          //动态定义间隔序列
-       gap = gap * 3 + 1;
-   }
-   for (gap; gap > 0; gap = Math.floor(gap/3)) {
-       for (var i = gap; i < len; i++) {
-           temp = arr[i];
-           for (var j = i-gap; j >= 0 && arr[j] > temp; j-=gap) {
-               arr[j+gap] = arr[j];
-           }
-           arr[j+gap] = temp;
-       }
-   }
-   return arr;
-}
+    // gap为步长，每次减为原来的一半。
+    for (let gap = a.length / 2; gap > 0; gap /= 2) {
+        // 共gap个组，对每一组都执行直接插入排序
+        for (let i = 0 ; i < gap; i++) {
+            for (let j = i + gap; j < a.length; j += gap)  {
+                // 如果a[j] < a[j-gap]，则寻找a[j]位置，并将后面数据的位置都后移。
+                if (a[j] < a[j - gap]) {
+                    let tmp = a[j];
+                    let k = j - gap;
+                    while (k >= 0 && a[k] > tmp) {
+                        a[k + gap] = a[k];
+                        k -= gap;
+                    }
+                    a[k + gap] = tmp;
+                }
+            }
+        }
+
+    }
+    return a;
+};
+
+console.log(shellSort([4, 9, 7, -4, 10]));

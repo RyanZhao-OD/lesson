@@ -1,6 +1,5 @@
-//LSD Radix Sort
+
 var counter = [];
-// https://segmentfault.com/a/1190000003054515?_ea=289827
 // 从数值每一位进行比较 个位、十位、百位...
 const radixSort = (arr, maxDigit) => {
    var mod = 10;
