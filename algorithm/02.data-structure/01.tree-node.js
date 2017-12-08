@@ -101,7 +101,7 @@ class BinarySearchTree {
         }
     }
 
-    dfsOrder() {
+    bfsOrder() {
         const queue = [this.root];
         while (queue.length !== 0) {
             let curNode = queue.shift();
@@ -135,6 +135,6 @@ tree.inOrder();
 console.log('------');
 tree.postOrder();
 console.log('------');
-tree.dfsOrder();
+tree.bfsOrder();
 
 */
