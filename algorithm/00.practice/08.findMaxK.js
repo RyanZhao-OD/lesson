@@ -9,7 +9,7 @@
 
 const _getPivotIndex = (arr, low, high) => {
     let pivot = arr[low]; //这里每次的枢纽元素都取了待排数组的第一个元素，记住是a[low],而不是a[0]
-    if (low < high) { //时间复杂度是O(n),n是数组长度
+    if (low < high) { 
         while(arr[high] >= pivot && low < high) {
             high--;
         }

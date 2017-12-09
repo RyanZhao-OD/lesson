@@ -1,25 +1,32 @@
-const shellSort = a => {
+const shellSort = arr => {
+    var i,
+        k,
+        j,
+        len = arr.length,
+        gap = Math.ceil(len / 2),
+        temp;
 
-    // gap为步长，每次减为原来的一半。
-    for (let gap = a.length / 2; gap > 0; gap /= 2) {
-        // 共gap个组，对每一组都执行直接插入排序
-        for (let i = 0 ; i < gap; i++) {
-            for (let j = i + gap; j < a.length; j += gap)  {
-                // 如果a[j] < a[j-gap]，则寻找a[j]位置，并将后面数据的位置都后移。
-                if (a[j] < a[j - gap]) {
-                    let tmp = a[j];
-                    let k = j - gap;
-                    while (k >= 0 && a[k] > tmp) {
-                        a[k + gap] = a[k];
-                        k -= gap;
+    while (gap > 0) {
+        for (var k = 0; k < gap; k++) {
+            var tagArr = [];
+            tagArr.push(arr[k]);
+            for (i = k + gap; i < len; i = i + gap) {
+                temp = arr[i];
+                tagArr.push(temp);
+                // 插入排序
+                for (j = i - gap; j > -1; j = j - gap) {
+                    if (arr[j] > temp) {
+                        arr[j + gap] = arr[j];
+                    } else {
+                        break;
                     }
-                    a[k + gap] = tmp;
                 }
+                arr[j + gap] = temp;
             }
         }
-
+        gap = parseInt(gap / 2);
     }
-    return a;
+    return arr;
 };
 
 console.log(shellSort([4, 9, 7, -4, 10]));

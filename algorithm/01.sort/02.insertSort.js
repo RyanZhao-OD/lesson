@@ -33,8 +33,6 @@ const insertSort2 = arr => {
 			}
 		}
 		// while循环结束后
-		// low - high === 1
-		// high === middle
 		// arr[i]的值应该插在low处
 
 		for (let j = i - 1; j >= low; j--) {

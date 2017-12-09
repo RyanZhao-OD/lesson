@@ -35,4 +35,3 @@ const bubbleSort2 = arr => {
 
 console.log(bubbleSort([4, 9, 7, -4, 10]));
 console.log(bubbleSort2([4, 9, 7, -4, 10]));
-console.log(bubbleSort3([4, 9, 7, -4, 10]));

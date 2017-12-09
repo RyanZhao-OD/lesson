@@ -33,7 +33,6 @@ const bucketSort = (arr, bucketSize = 5, sortBy = insertSort) => {
     }
 
     //桶的初始化
-
     // 桶的个数
     var bucketCount = Math.floor((maxValue - minValue) / bucketSize) + 1;
     var buckets = new Array(bucketCount);
