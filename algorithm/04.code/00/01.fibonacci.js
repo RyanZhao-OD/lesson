@@ -2,9 +2,10 @@
 //  f(n) =      2  (n = 2)
 //            f(n - 1) + f(n - 2)  (n > 3)
 // 斐波那契数列
+// 1、1、2、3、5、8、13、21、34
 const fibonacci = n => {
     if (n < 3) {
-        return n;
+        return 1;
     }
     return fibonacci(n - 1) + fibonacci( n - 2);
 };

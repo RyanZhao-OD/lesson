@@ -3,13 +3,14 @@ const insertSort = arr => {
 	// 初始情况：0位置为已经排好序，1以后的还没排好序
 	for (let i = 1; i < arr.length; i++) {
 		for (let j = i; j > 0; j--) {
-			if (arr[j] < arr[j - 1]) {
-				[arr[j], arr[j - 1]] = [arr[j - 1], arr[j]];
-			}
-		}
+            if (arr[j] < arr[j - 1]) {
+                [arr[j], arr[j - 1]] = [arr[j - 1], arr[j]];
+            }
+        }
 	}
 	return arr;
 };
+
 
 // 插入排序(折半插入)
 const insertSort2 = arr => {

@@ -1,3 +1,7 @@
+//  4, 1, 3, -1, 5, 6,9
+
+
+// 1, 3, -1, 4,  5, 6,9
 const _getPivotIndex = (arr, start, end) => {
 	const pivot = arr[start];
 	while (start < end) {

@@ -7,8 +7,15 @@
  * 4.构建一个最小堆,大小为n 遍历这个数组(O(N))，如果比堆顶部小，重新维护堆结构(O(logn)),辅助存储空间为n(辅助存储空间n)
  */
 
+
+//  1, 3, 4, 5, 7, 10, 10
+// [4, 5, 3, 7, -1, 10, 9] 4
+// [3, -1, 4, 5, 7, 10, 9]
+
+
 const _getPivotIndex = (arr, low, high) => {
-    let pivot = arr[low]; //这里每次的枢纽元素都取了待排数组的第一个元素，记住是a[low],而不是a[0]
+    //这里每次的枢纽元素都取了待排数组的第一个元素，记住是a[low],而不是a[0]
+    let pivot = arr[low];
     if (low < high) { 
         while(arr[high] >= pivot && low < high) {
             high--;
@@ -48,4 +55,4 @@ const findMaxK = (arr, k) => {
 };
 
 //  9, 7, 4 , 1, -3
-console.log(findMaxK([1, 4, -3, 9, 7], 5));
+console.log(findMaxK([1, 4, -3, 9, 7], 2));
